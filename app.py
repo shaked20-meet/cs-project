@@ -41,7 +41,7 @@ def log_in():
 					wrong_username_m = wrong_username_m)
 
 			elif user.username != username and user.password != password:
-				wrong_password_m = "The password seems to be wrong..."
+				wrong_password_m = "The password seems to be wrong... " + str(type(username))
 				wrong_username_m = "The username seems to be wrong..."
 				return render_template("Log_In.html", wrong_password_m = wrong_password_m,
 					wrong_username_m = wrong_username_m)
