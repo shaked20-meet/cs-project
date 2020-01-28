@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thank You</title>
+	<link rel="stylesheet" type="text/css" href="../static/after_sharing_c.css">
+</head>
+<body>
+	<div id="nav">
+		<ul id="ul">
+		  <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+		  <li><a href="{{ url_for('about') }}">About</a></li>
+		  <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+		  <li><a href="{{ url_for('share_your_recipe') }}">Share Your Recipe!</a></li>
+		</ul>
+	</div>
+	
+	<div class="context">
+        <h1>Thank you for sharing your recipe!</h1>
+
+    </div>
+    <form class="buttonsS" method="GET" action="/log_in">
+		<button class="btn-hover color-10">Share Another One!</button>
+	</form>		
+
+	<div class="area" >
+            <ul class="circles">
+                    <li><img src="../static/cake.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/cu.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/cookies.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/pan.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/donat.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/pav.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/crock.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/pan.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/cu.jpg" style="width:100%;height: 100%;"></li>
+                    <li><img src="../static/donat.jpg" style="width:100%;height: 100%;"></li>
+            </ul>
+    </div >
+
+</body>
+</html>

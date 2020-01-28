@@ -1,0 +1,113 @@
+body{
+	background-image: url("pastry.jpg");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	margin: 0%;
+}
+
+#main_div{
+	clip-path: polygon(44% 0, 65% 50%, 44% 100%, 0% 100%, 0 51%, 0% 0%);
+	background-color: #F7CAC1;
+	color: #2D3142;
+	position: absolute;
+	top: 8%;
+	width: 90%;
+	height: 92%;
+	opacity: 0.8;
+}
+
+#text_div{
+	color: #2D3142;
+	position: absolute;
+	top: 20%;
+	left: 5%;
+	font-family: "Brush Script MT", "Brush Script Std", cursive;
+	font-size: 250%;
+}
+
+#nav{
+  z-index: 10;
+  position: fixed;
+  bottom: 69%;
+  width: 100%;
+  height: 120px;
+  top: 0%;
+  font-family: "Snell Roundhand", cursive;
+  font-size: 150%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 80px;
+
+  background-color: #2D3142;
+} 
+li {
+  float: left;
+  width: 25%;
+}
+
+
+li a {
+  display: block;
+  color: #f7e9e6;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #666975;
+  height: 80px;
+}
+.buttonsS {
+    margin: 10%;
+    text-align: center;
+    position: absolute;
+    left: 10%;
+    top: 60%;
+   
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    font-family: "Brush Script MT", "Brush Script Std", cursive;
+    font-size: 150%;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+
+.btn-hover.color-10 {
+    background-image: linear-gradient(to right, #8C2034, #8C2034, #F7CAC1, #8C2034);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+    width: 100%;
+   
+}

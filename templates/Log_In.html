@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/Log_In_c.css">
+	<title>LogIn / SignUp</title>
+</head>
+<body>
+	<div id="back">
+		
+	</div>
+	<div id="nav">
+		<ul>
+		  <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+		  <li><a href="{{ url_for('about') }}">About</a></li>
+		  <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+		  <li><a href="{{ url_for('share_your_recipe') }}">Share Your Recipe!</a></li>
+		</ul>
+	</div>
+
+	<div id="opacity_setting">
+		<div id="log_in">
+			<h1>Log In</h1>
+			<p>Already have an account? Log in!</p>
+			<form action="/log_in" method="POST">
+				<input type="text" name="username" id="placeholder" placeholder="Username" required="required">
+				<input type="password" name="password" id="placeholder" placeholder="Password" required="required">
+				<div class="buttonsL">
+	   		 		<button type="submit" class="btn-hover color-10" id="loginb">Log In</button>
+				</div>
+			</form>
+			<p>{{ wrong_username_m }}</p>
+			<p>{{ wrong_password_m }}</p>
+		</div>
+
+		<div id = "sign_up">
+			<h1>Sign Up</h1>
+			<p>Don't have an account? Sign up!</p>
+			<form action="/sign_up" method="POST">
+				<input type="text" name="new_username" id="placeholder" placeholder="Username">
+				<input type="password" name="new_password" id="placeholder" placeholder="Password">
+				<div class="buttonsS">
+	   		 		<button type="submit" class="btn-hover color-10">Sign Up</button>
+				</div>
+			</form>
+			<p>{{ username_message }}</p>
+			<p>{{ password_message }}</p>
+		</div>
+	</div>
+	
+
+</body>
+</html>

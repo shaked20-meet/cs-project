@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/about_c.css">
+	<title>About</title>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+		  <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+		  <li><a href="{{ url_for('about') }}">About</a></li>
+		  <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+		  <li><a href="{{ url_for('share_your_recipe') }}">Share Your Recipe!</a></li>
+		</ul>
+	</div>
+
+	<div id="main_div">
+
+		<div id="t_text_pos">
+			<p>
+				This webpage is an online recipe book. One that contains many recipes from different places around the world.
+				The best recipe book online, one that users around the world create.
+			</p>
+		</div>
+
+		<h2>How To Use This Online Recipe Book?</h2>
+		<div id="text_pos">
+			<p id="m_text_pos">
+				You can search your desired recipe by clicking on the "Recipes" button. You can also look at other recipes that users have uploded.
+			</p>
+
+			<p id="b_text_pos">
+				You can also sign up / log in, and share your recipe by uploding it to the website! Just press the "Share Your Recipe" button, and you are good to go! You are more than welcome to grade recipes you've tried so far! the 5 recipes with the highest scores will appear in the top 5 on the "Recipes" page!
+			</p>
+		</div>
+	</div>
+	<form class="buttonsS" method="GET" action="/log_in">
+		<button class="btn-hover color-10">Log In / Sign Up</button>
+	</form>	
+</body>
+</html>

@@ -1,0 +1,160 @@
+body{
+  margin: 0%;
+}
+
+#nav{
+  z-index: 10;
+  position: fixed;
+  bottom: 69%;
+  width: 100%;
+  height: 120px;
+  top: 0%;
+  font-family: "Snell Roundhand", cursive;
+  font-size: 150%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 80px;
+
+  background-color: #2D3142;
+} 
+li {
+  float: left;
+  width: 25%;
+}
+
+
+li a {
+  display: block;
+  color: #f7e9e6;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #666975;
+  height: 80px;
+}
+#back{
+  background-image: url("pie2.webp");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#main_div{
+  position: absolute;
+  width: 85%;
+  height: 80%;
+  top: 15%;
+  left: 7.5%;
+  background-color: #F7CAC1;
+  opacity: 0.9;
+}
+
+
+.buttons{
+  margin: 10%;
+  text-align: center;
+  position: absolute;
+  right: -2%;
+  bottom: -15%;
+  width: 20%;
+}
+
+.btn-hover {
+    width: 300px;
+    font-size: 150%;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 80px;
+    text-align:center;
+    font-family: "Snell Roundhand", cursive;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+
+.btn-hover.color-10 {
+    background-image: linear-gradient(to right, #8C2034, #8c2034, #F7CAC1, #8c2034);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+    width: 100%;
+   
+}
+
+
+.placeholder{
+  color: #2D3142;
+  border: none;
+  border-radius: 12px;
+  padding: 2%;
+  font-family: "Snell Roundhand", cursive;
+  font-size: 150%;
+}
+
+#input1{
+  position: absolute;
+  top: 10%;
+  left: 7%;
+
+}
+#input2{
+  position: absolute;
+  top: 10%;
+  left: 37%;
+
+}
+#input3{
+  position: absolute;
+  top: 30%;
+  left: 7%;
+
+
+}
+#input4{
+  position: absolute;
+  top: 30%;
+  left: 37%;
+
+}
+#pic{
+  position: absolute;
+  top: 10%;
+  left: 67%;
+}
+
+p{
+ font-family: "Snell Roundhand", cursive;
+ font-size: 150%;
+ position: absolute;
+ left: 69%; 
+}
+
+
+

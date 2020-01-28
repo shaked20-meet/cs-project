@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/share_your_recipe_c.css">
+	<title>ShareYourRecipe</title>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+		  <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+		  <li><a href="{{ url_for('about') }}">About</a></li>
+		  <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+		  <li><a href="{{ url_for('share_your_recipe') }}">Share Your Recipe!</a></li>
+		</ul>
+	</div>
+	<div id="back">
+		
+	</div>
+	<div id="main_div">
+		<div>
+			<form id="share" action="/share_your_recipe" method="POST">
+				<input type="text" name="recipe_name" placeholder="Recipe Name" required="required" class="placeholder" id="input1">
+				<input type="text" name="cook_name" placeholder="Your Name" required="required" class="placeholder" id="input2">
+				<p>Add a picture!</p>
+				<input type="file" name="pic" placeholder="Picture Link" class="placeholder" id="pic">
+				 <textarea form = "share" name="ingredients" rows="8" cols="20" class ="placeholder" id="input3" required placeholder="Ingredients" wrap="soft|hard"></textarea>
+				 <textarea form = "share" required name="instructions" rows="8" cols="52" class ="placeholder" id="input4" placeholder="Instructions"></textarea>
+				<div class="buttons">
+	   		 		<button type="submit" class="btn-hover color-10">Share Recipe!</button>
+				</div>
+			</form>
+		</div>
+		
+	</div>
+</body>
+</html>

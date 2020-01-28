@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/recipe_c.css">
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+	<title>{{recipe_object.r_name}}</title>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+		  <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+		  <li><a href="{{ url_for('about') }}">About</a></li>
+		  <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+		  <li><a href="{{ url_for('share_your_recipe') }}">Share Your Recipe!</a></li>
+		</ul>
+	</div>
+
+	<div id = "title1">
+		<h1>{{recipe_object.r_name}}</h1>
+	</div>
+	<div id="main_div">
+
+		<h2 id="t1">Ingredients</h2>
+
+		<textarea id="ingridients" readonly="readonly" rows="15" cols="30">
+You will need:
+{{recipe_object.ingredients}}
+		</textarea>
+
+		<h2 id="t2">Instructions</h2>
+
+		<textarea id="instructions" readonly="readonly" rows="15" cols="40">
+{{recipe_object.instructions}}
+		</textarea>
+	</div>
+
+	<p>{{ message }}</p>
+	<div id="rank">
+		<form method="POST" action="/recipe_rate">
+			<fieldset class="rating">
+			    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+			    <input type="radio" id="star4half" name="rating" value="4.5" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+			    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+			    <input type="radio" id="star3half" name="rating" value="3.5" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+			    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+			    <input type="radio" id="star2half" name="rating" value="2.5" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+			    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+			    <input type="radio" id="star1half" name="rating" value="1.5" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+			    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+			    <input type="radio" id="starhalf" name="rating" value="0.5" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+			    <input type="checkbox" name="recipe_object_id" value= {{ recipe_object.id }} checked="checked" style="opacity:0;">
+			    <div class="buttons">
+	   		 		<button type="submit" class="btn-hover color-10">Rank</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	
+	<form class="buttonsS" method="GET" action="/log_in">
+		<button class="btn-hover color-10">Log In / Sign Up</button>
+	</form>		
+</body>
+</html>

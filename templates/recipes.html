@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/recipes_c.css">
+	<title>Recipes</title>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+		  <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+		  <li><a href="{{ url_for('about') }}">About</a></li>
+		  <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+		  <li><a href="{{ url_for('share_your_recipe') }}">Share Your Recipe!</a></li>
+		</ul>
+	</div>
+
+	<div id="main_div">
+	</div>
+	<div id="texts">
+		<h1>All The Best Recipes.</h1>
+		<h2>In one place.</h2>
+	</div>
+	
+	<form class="buttonsS" method="GET" action="/all_recipes">
+		<button class="btn-hover color-10">View All Recipes</button>
+	</form>		
+
+	<div id="under">
+		<h2 id="title2">The Top 3 Recipes</h2>
+	</div>
+
+
+
+	<div class="carousel-wrapper">
+	  <span id="item-1"></span>
+	  <span id="item-2"></span>
+	  <span id="item-3"></span>
+	  <div class="carousel-item item-1">
+	    <h2 id="textOnPic">Chocolate Cake</h2>
+	    <p id="textOnPic">By: Shani Rivlin</p>
+	    <p id="textOnPic">Rank: 400</p>
+	    <a class="arrow arrow-prev" href="#item-3"></a>
+	    <a class="arrow arrow-next" href="#item-2"></a>
+      </div>
+  
+	  <div class="carousel-item item-2">
+	    <h2 id="textOnPic">Tiny Strawberry Pies</h2>
+	    <p id="textOnPic">By: Keren Rivlin</p>
+	    <p id="textOnPic">Rank: 399</p>
+	    <a class="arrow arrow-prev" href="#item-1"></a>
+	    <a class="arrow arrow-next" href="#item-3"></a>
+	  </div>
+	  
+	  <div class="carousel-item item-3">
+	    <h2 id="textOnPic">Blueberry Pie</h2>
+	    <p id="textOnPic">By: Omer Gilad</p>
+	    <p id="textOnPic">Rank: 390</p>
+	    <a class="arrow arrow-prev" href="#item-2"></a>
+	    <a class="arrow arrow-next" href="#item-1"></a>
+	  </div>
+</div>
+
+
+</body>
+</html>

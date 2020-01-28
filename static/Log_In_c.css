@@ -1,0 +1,148 @@
+body{
+  margin: 0%;
+
+}
+#back{
+  background-image: url("mac.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  filter: blur(5px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+ 
+#nav{
+  z-index: 10;
+  position: fixed;
+  bottom: 69%;
+  width: 100%;
+  height: 30%;
+  top: 0%;
+  font-family: "Snell Roundhand", cursive;
+  font-size: 120%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 58px;
+
+  background-color: #2D3142;
+} 
+li {
+  float: left;
+  width: 25%;
+}
+
+
+li a {
+  display: block;
+  color: #f7e9e6;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #666975;
+}
+
+#log_in{
+	position: absolute;
+	top: 35%;
+	left: 4.5%;
+	width: 40%;
+	height: 30%;
+	padding: 20px 20px;
+	background-color: #F7CAC1;
+	color: #2D3142;
+}
+#sign_up{
+	position: absolute;
+	top: 35%;
+	left: 52.7%;
+	width: 40%;
+	height: 30%;
+	padding: 20px 20px;
+	background-color: #F7CAC1;
+	color: #2D3142;
+}
+#opacity_setting{
+  opacity: 0.9;
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.buttonsS {
+  margin: 10%;
+  text-align: center;
+  position: absolute;
+  right: -4%;
+  top: 14%;
+  width: 20%;
+}
+.buttonsL{
+  margin: 10%;
+  text-align: center;
+  position: absolute;
+  right: -2%;
+  top: 14%;
+  width: 20%;
+}
+
+.btn-hover {
+    width: 300px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+
+.btn-hover.color-10 {
+    background-image: linear-gradient(to right, #8C2034, #8c2034, #F7CAC1, #8c2034);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+    width: 100%;
+   
+}
+#loginb{
+	width: 110%;
+
+}
+
+#placeholder{
+	color: #2D3142;
+	border: none;
+	border-radius: 12px;
+	padding: 2%;
+}

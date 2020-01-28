@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/home_c.css">
+	<title>Home</title>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+		  <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+		  <li><a href="{{ url_for('about') }}">About</a></li>
+		  <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+		  <li><a href="{{ url_for('share_your_recipe') }}">Share Your Recipe!</a></li>
+		</ul>
+	</div>
+
+	<div id="main_div">
+		<div id="text_div">
+			<h1>Welcome.</h1>
+			<h2>The best recipe book online.</h2>
+		</div>
+	</div>
+	<form class="buttonsS" method="GET" action="/log_in">
+		<button class="btn-hover color-10">Log In / Sign Up</button>
+	</form>		
+</html>
