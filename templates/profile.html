@@ -13,8 +13,52 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	
+	<div id="nav">
+		<ul>
+		  <li><a class="active" href="{{ url_for('home') }}">Home</a></li>
+		  <li><a href="{{ url_for('about') }}">About</a></li>
+		  <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+		  <li><a href="{{ url_for('share_your_recipe') }}">Share Your Recipe!</a></li>
+		</ul>
+	</div>
 
 	<h1>You can now share and rank more recipes! Enjoy!</h1>
+	<h2>Recent Recipes:</h2>
+
+	<div class = "pos">
+	<div id = "table">
+		<div class = "row" style="top: 40%;">
+			{% for recipe in recent %}
+				<div class = "col-md-2">
+					<div class = "card" style="min-height: 350px;">
+					  <img src= {{ recipe.pic }} height="150"; >
+					  <h1>{{ recipe.r_name }}</h1>
+					  <p class="price">By: {{ recipe.cook_name }}</p>
+					  <p class="price">Rank: {{ recipe.average_rank }}</p>
+					  <form action="/recipe" method="POST">
+					  	<form class="buttonsC" method="POST" action="/recipe">
+					      	<input type="checkbox" name="recipe_id" value= {{ recipe.id }} checked="checked" style="opacity:0;">
+							<button class="btn-hover color-10">View Recipe</button>
+						  </form>
+					  </form> 
+					</div>
+					<br>
+					<br>	
+				</div>
+			{% endfor %}
+		</div>
+		</div>
+	</div>
+	<div id = "stick"> 
+		<div style="position: fixed;z-index: -10;
+	background-image: url('../static/b.jpg');
+	background-repeat: no-repeat;
+	background-size: cover; 
+	filter: blur(4px);
+	width: 100%;
+	height: 100%;
+	margin: 0%;">
+		</div>
+	</div>
 </body>
 </html>

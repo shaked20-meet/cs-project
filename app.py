@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = "MY_SUPER_SECRET_KEY"
 
 is_logged = False
-
+recent = []
 
 @app.route('/')
 def home():
@@ -46,7 +46,7 @@ def log_in():
 				return render_template("Log_In.html", wrong_password_m = wrong_password_m,
 					wrong_username_m = wrong_username_m)
 	elif is_logged: #===>checking if the user already logged in once.
-		return render_template("profile.html")
+		return render_template("profile.html", recent = recent)
 
 	return render_template("Log_In.html")
 
@@ -105,6 +105,7 @@ def recipe_rate():
 	message = ""
 	recipe_id = request.form["recipe_object_id"]
 	recipe_object = return_recipe(recipe_id)
+	recent.append(recipe_object)
 
 	if is_logged:
 		user_rank = float(request.form["rating"])
