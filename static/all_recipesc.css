@@ -48,6 +48,7 @@ li a {
 li a:hover {
   background-color: #666975;
   height: 80px;
+  color: #fff;
 }
 #search{
   z-index: 12;
@@ -61,7 +62,7 @@ li a:hover {
   width: 150%;
   font-family: "Snell Roundhand", cursive;
   font-size: 20px;
-  background-color: #FCF0CC;
+  background-color: #fff;
 
 }
 .buttonsS {

@@ -1,5 +1,5 @@
 body{
-  background-color: #FCF0CC;
+  background-color: #fff;
   margin: 0%;
 
 }
@@ -39,6 +39,7 @@ li a {
 li a:hover {
   background-color: #666975;
   height: 80px;
+  color: #fff
 }
 #main_div{
   
@@ -57,54 +58,34 @@ li a:hover {
   color:  #FCF0CC;
   text-shadow: 3px 3px #2D3142;
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 7%;
   font-family: "Brush Script MT", "Brush Script Std", cursive;
   font-size: 150%;
 }
-#search{
-  z-index: 12;
-  position: absolute;
-  top: 50%;
-  left: 7%;
-}
-#s_bar{
-  border-radius: 12px;
-  padding: 5%;
-  width: 120%;
-  font-family: "Snell Roundhand", cursive;
-  background-color: #FCF0CC;
 
-}
 .buttonsS {
     margin: 10%;
     text-align: center;
     position: absolute;
     left: -4%;
     top: 20%;
+    font-size: 120%;
    
    
 }
-.buttonsA {
 
-    margin: 10%;
-    text-align: center;
-    position: absolute;
-    left: 70%;
-    top: 23%;
-    width: 15%;
-  }
 .btn-hover {
-    width: 200px;
+    width: 100px;
     font-size: 16px;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-    margin: 20px;
+    margin: 0px;
     height: 55px;
     text-align:center;
     font-family: "Brush Script MT", "Brush Script Std", cursive;
-    font-size: 150%;
+    font-size: 110%;
     border: none;
     background-size: 300% 100%;
 
@@ -136,104 +117,46 @@ li a:hover {
 }
 #under{
   position: absolute;
-  top: 65%;
-  left: 7%;
+  top: 70%;
+  left: 2%;
 }
 
 
 #title2{
   font-family: "Brush Script MT", "Brush Script Std", cursive;
-  color:  #2D3142;
+  color:  #8C2034;
+  /*text-shadow: 3px 3px #2D3142;*/
   font-size: 270%;
 }
-#textOnPic{
-  font-family: "Brush Script MT", "Brush Script Std", cursive;
-  color:  #FCF0CC;
-  text-shadow: 3px 3px #2D3142;
-  font-size: 170%
-}
-.carousel-wrapper{
-  height:80%;
-  position:absolute;
-  top: 85%;
-  left: 7%;
-  width:80%;
-  margin:0 auto;
-}
-.carousel-item{
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  padding:25px 50px;
-  opacity:0;
-  transition: all 0.5s ease-in-out;
-}
-.arrow{
-  border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 12px;
-}
 
-.arrow-prev{
-  left:-30px;
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%) rotate(135deg);
-}
- 
-.arrow-next{
-    right:-30px;
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%) rotate(-45deg);
-  }
-
-.light{
-  color:white;
-}
-
-@media (max-width: 480px) {
-      .arrow, .light .arrow {
-        background-size: 10px;
-        background-position: 10px 50%;
-      }
-    }
+.pos{
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  height: 50%;
+  left: 2%;
 }
 
 
-/*Select every element*/
-[id^="item"] {
-    display: none;
-  }
-
-.item-1 {
-    z-index: 2;
-    opacity: 1;
-  background:url('cake.jpg');
-  background-size:cover;
-  }
-.item-2{
-  background:url('item2.jpg');
-   background-size:cover;
-}
-.item-3{
-  background:url('cupcake.PNG');
-   background-size:cover;
+.card {
+  background-color: #FCF0CC;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: 350px;
+  margin: 0px;
+  text-align: center;
+  font-family: "Snell Roundhand", cursive;
 }
 
-*:target ~ .item-1 {
-    opacity: 0;
-  }
-
-#item-1:target ~ .item-1 {
-    opacity: 1;
-  }
-
-#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
-    z-index: 3;
-    opacity: 1;
-  }
+.price {
+  color: grey;
+  font-size: 22px;
+}
+.buttonsC{
+    margin: 10%;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: -115%;
+   
 }

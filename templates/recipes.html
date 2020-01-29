@@ -2,6 +2,14 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../static/recipes_c.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='recipes_c.css') }}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<title>Recipes</title>
 </head>
 <body>
@@ -26,40 +34,33 @@
 	</form>		
 
 	<div id="under">
-		<h2 id="title2">The Top 3 Recipes</h2>
+		<h2 id="title2">The Top Recipes:</h2>
 	</div>
 
-
-
-	<div class="carousel-wrapper">
-	  <span id="item-1"></span>
-	  <span id="item-2"></span>
-	  <span id="item-3"></span>
-	  <div class="carousel-item item-1">
-	    <h2 id="textOnPic">Chocolate Cake</h2>
-	    <p id="textOnPic">By: Shani Rivlin</p>
-	    <p id="textOnPic">Rank: 400</p>
-	    <a class="arrow arrow-prev" href="#item-3"></a>
-	    <a class="arrow arrow-next" href="#item-2"></a>
-      </div>
-  
-	  <div class="carousel-item item-2">
-	    <h2 id="textOnPic">Tiny Strawberry Pies</h2>
-	    <p id="textOnPic">By: Keren Rivlin</p>
-	    <p id="textOnPic">Rank: 399</p>
-	    <a class="arrow arrow-prev" href="#item-1"></a>
-	    <a class="arrow arrow-next" href="#item-3"></a>
-	  </div>
-	  
-	  <div class="carousel-item item-3">
-	    <h2 id="textOnPic">Blueberry Pie</h2>
-	    <p id="textOnPic">By: Omer Gilad</p>
-	    <p id="textOnPic">Rank: 390</p>
-	    <a class="arrow arrow-prev" href="#item-2"></a>
-	    <a class="arrow arrow-next" href="#item-1"></a>
-	  </div>
-</div>
-
+	<div class = "pos">
+	<div id = "table">
+		<div class = "row" style="top: 40%;">
+			{% for recipe in top_recipes %}
+				<div class = "col-md-2">
+					<div class = "card" style="min-height: 350px;">
+					  <img src= {{ recipe.pic }} height="150"; >
+					  <h1>{{ recipe.r_name }}</h1>
+					  <p class="price">By: {{ recipe.cook_name }}</p>
+					  <p class="price">Rank: {{ recipe.average_rank }}</p>
+					  <form action="/recipe" method="POST">
+					  	<form class="buttonsC" method="POST" action="/recipe">
+					      	<input type="checkbox" name="recipe_id" value= {{ recipe.id }} checked="checked" style="opacity:0;">
+							<button class="btn-hover color-10">View Recipe</button>
+						  </form>
+					  </form> 
+					</div>
+					<br>
+					<br>	
+				</div>
+			{% endfor %}
+		</div>
+		</div>
+	</div>
 
 </body>
 </html>

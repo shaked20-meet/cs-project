@@ -9,6 +9,7 @@ app.secret_key = "MY_SUPER_SECRET_KEY"
 
 is_logged = False
 recent = []
+top_recipes = []
 username = ""
 
 @app.route('/')
@@ -105,7 +106,13 @@ def recipe():
 
 @app.route('/recipes')
 def recipes():
-	return render_template("recipes.html")
+	global top_recipes
+	all_recipes = return_all_recipes()
+	for recipe in all_recipes:
+		if recipe.average_rank != "No rank yet!" and recipe not in top_recipes:
+			if float(recipe.average_rank) >= 4.5:
+				top_recipes.append(recipe)
+	return render_template("recipes.html" , top_recipes = top_recipes)
 
 @app.route('/recipe_rate', methods = ['POST'])
 def recipe_rate():
@@ -120,6 +127,13 @@ def recipe_rate():
 		new_rank_sum = recipe_object.rank_sum + user_rank
 		new_rank_count = recipe_object.rank_count + 1
 		edit_rank(recipe_id, new_rank_sum, new_rank_count)
+
+
+		all_recipes = return_all_recipes()
+		for recipe in all_recipes:
+			if recipe.average_rank != "No rank yet!" and recipe not in top_recipes:
+				if float(recipe.average_rank) >= 4.5:
+					top_recipes.append(recipe)
 
 		return render_template("recipe.html", recipe_object = recipe_object, message = message)
 	message = "Log in first!"
