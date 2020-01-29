@@ -9,13 +9,14 @@ app.secret_key = "MY_SUPER_SECRET_KEY"
 
 is_logged = False
 recent = []
+username = ""
 
 @app.route('/')
 def home():
 	return render_template("home.html")
 @app.route('/log_in' , methods = ['GET', 'POST'])
 def log_in():
-	global is_logged, recent
+	global is_logged, recent,username
 	wrong_username_m = ""
 	wrong_password_m = ""
 	
@@ -25,28 +26,33 @@ def log_in():
 		password = request.form["password"]
 		all_users_list = return_all_users()
 
+		a = return_all_users()
+		for i in a:
+			print(i.username)
+			print(i.password)
+
 		for user in all_users_list: #==> check if the user's info is correct. If not, it returns a message to the user.
 			if user.username == username and user.password == password:
 				is_logged = True #once users log in they don't have to log in again at the same time they are using the website. 
 				return render_template("profile.html", username = username)
 
-			elif user.username == username and user.password != password:
-				wrong_password_m = "The password seems to be wrong..."
-				return render_template("Log_In.html", wrong_password_m = wrong_password_m,
-					wrong_username_m = wrong_username_m)
+		if is_logged == False and user.username == username and user.password != password:
+			wrong_password_m = "The password seems to be wrong..."
+			return render_template("Log_In.html", wrong_password_m = wrong_password_m,
+				wrong_username_m = wrong_username_m)
 
-			elif user.username != username and user.password == password:
-				wrong_username_m = "The username seems to be wrong..."
-				return render_template("Log_In.html", wrong_password_m = wrong_password_m,
-					wrong_username_m = wrong_username_m)
+		elif is_logged == False and user.username != username and user.password == password:
+			wrong_username_m = "The username seems to be wrong..."
+			return render_template("Log_In.html", wrong_password_m = wrong_password_m,
+				wrong_username_m = wrong_username_m)
 
-			elif user.username != username and user.password != password:
-				wrong_password_m = "The password seems to be wrong..."
-				wrong_username_m = "The username seems to be wrong..."
-				return render_template("Log_In.html", wrong_password_m = wrong_password_m,
-					wrong_username_m = wrong_username_m)
+		elif is_logged == False and user.username != username and user.password != password:
+			wrong_password_m = "The password seems to be wrong..."
+			wrong_username_m = "The username seems to be wrong..."
+			return render_template("Log_In.html", wrong_password_m = wrong_password_m,
+				wrong_username_m = wrong_username_m)
 	elif is_logged: #===>checking if the user already logged in once.
-		return render_template("profile.html", recent = recent)
+		return render_template("profile.html", recent = recent, username = username)
 
 	return render_template("Log_In.html")
 
@@ -78,7 +84,9 @@ def sign_up():
 				password_message = password_message)
 
 		add_user(new_username, new_password) #===> if the user doesn't exist, add it to the db.
-		return render_template("after_signup.html", username_message = username_message, 
+
+		username_message = "You are now signed up. You can log in!"
+		return render_template("Log_In.html", username_message = username_message, 
 		password_message = password_message)
 
 	return render_template("Log_In.html", username_message = username_message, 
