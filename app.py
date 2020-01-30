@@ -27,11 +27,6 @@ def log_in():
 		password = request.form["password"]
 		all_users_list = return_all_users()
 
-		a = return_all_users()
-		for i in a:
-			print(i.username)
-			print(i.password)
-
 		for user in all_users_list: #==> check if the user's info is correct. If not, it returns a message to the user.
 			if user.username == username and user.password == password:
 				is_logged = True #once users log in they don't have to log in again at the same time they are using the website. 
@@ -52,7 +47,7 @@ def log_in():
 			wrong_username_m = "The username seems to be wrong..."
 			return render_template("Log_In.html", wrong_password_m = wrong_password_m,
 				wrong_username_m = wrong_username_m)
-	elif is_logged: #===>checking if the user already logged in once.
+	if is_logged: #===>checking if the user already logged in once.
 		return render_template("profile.html", recent = recent, username = username)
 
 	return render_template("Log_In.html")
@@ -99,7 +94,7 @@ def about():
 
 @app.route('/recipe', methods = ['POST'])
 def recipe():
-	message = ""
+	message = "" # == > the message is updated in '/recipe_rate', when the user isn't logged in.
 	recipe_id = request.form["recipe_id"]
 	recipe_object = return_recipe(recipe_id)
 	return render_template("recipe.html", recipe_object = recipe_object, message = message)
@@ -108,8 +103,8 @@ def recipe():
 def recipes():
 	global top_recipes
 	all_recipes = return_all_recipes()
-	for recipe in all_recipes:
-		if recipe.average_rank != "No rank yet!" and recipe not in top_recipes:
+	for recipe in all_recipes: 
+		if recipe.average_rank != "No rank yet!" and recipe not in top_recipes: #==> choosing the top recipes.
 			if float(recipe.average_rank) >= 4.5:
 				top_recipes.append(recipe)
 	return render_template("recipes.html" , top_recipes = top_recipes)
@@ -122,7 +117,7 @@ def recipe_rate():
 	recipe_object = return_recipe(recipe_id)
 	recent.append(recipe_object)
 
-	if is_logged:
+	if is_logged: #==> updating the rank only if the user is logged in.
 		user_rank = float(request.form["rating"])
 		new_rank_sum = recipe_object.rank_sum + user_rank
 		new_rank_count = recipe_object.rank_count + 1
@@ -146,7 +141,7 @@ def all_recipes():
 	if request.method == 'POST':
 		search = request.form["search"]
 		results = []
-		for recipe in recipes_list:
+		for recipe in recipes_list: #===> searching a recipe by comparing strings.
 			if recipe.r_name == search or search[0:3] in recipe.r_name:
 				results.append(recipe)
 		if len(results) == 0:
@@ -164,7 +159,7 @@ def share_your_recipe():
 		ingredients = str(request.form["ingredients"])
 		instructions = str(request.form["instructions"])
 		pic = "../static/" + request.form["pic"]
-		add_recipe(recipe_name, cook_name, ingredients, instructions, pic, rank_sum, rank_count)
+		add_recipe(recipe_name, cook_name, ingredients, instructions, pic, rank_sum, rank_count) #===> adding the recipe to the db.
 		return render_template("after_sharing.html")
 	return render_template("share_your_recipe.html")
 
